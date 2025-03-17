@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marvel World</title>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+
+    <style>
+        .head {
+            background-color: darkred;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px;
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .logo-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-grow: 1;
+        }
+        .logo-container img {
+            height: 50px;
+            width: 100px;
+            margin-left: 10px;
+        }
+        .header-left {
+            display: flex;
+            gap: 10px;
+        }
+        .marq {
+            background-color: black;
+            color: whitesmoke;
+            padding: 5px;
+            text-align: center;
+        }
+        .welcome {
+            font-family: "Brush Script MT", cursive;
+            font-size: 40px;
+        }
+        /* Background Section */
+        .background-section {
+            position: relative;
+            background: url('public/image/marvelbackground.png') no-repeat center center/cover;
+            height: 900px;
+            width: 100%;
+            margin-top: 80px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        /* Semi-transparent overlay */
+        .background-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.7);
+            z-index: 1;
+        }
+        /* Section Headers */
+        .background-text, .background-text2 {
+            position: relative;
+            font-weight: bold;
+            font-size: 30px;
+            color: black;
+            z-index: 2;
+            margin: 20px 0;
+            text-align: center;
+        }
+        /* Image Container */
+        .image-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+            width: 90%;
+            position: relative;
+            z-index: 2;
+        }
+        /* Flip Card Effect */
+        .card-container {
+            perspective: 1000px;
+            cursor: pointer;
+            width: 250px;
+            height: 375px;
+            animation: float 4s ease-in-out infinite; /* Floating animation */
+        }
+        .card {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transform-style: preserve-3d;
+            transition: transform 0.5s;
+        }
+        .card-container:hover .card {
+            transform: rotateY(180deg);
+        }
+        .front, .back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+        }
+        .front img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .back {
+            transform: rotateY(180deg);
+            background-color: black;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+            padding: 10px;
+        }
+        .back a:hover {
+            background-color: red;
+            color: white;
+            transform: scale(1.1);
+                    box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);}
+        /* Floating Animation */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+    </style>
+</head>
+<body>
+  
+
+    <div class="head">
+       
+        <div class="header-left">
+            <button class="btn btn-light">Login</button>
+            <button class="btn btn-light">
+                <i class="bi bi-search"></i> Search
+            </button>
+        </div>
+
+       
+        <div class="logo-container">
+            <span class="welcome">Welcome to</span>
+            <img src="public/image/marvel.png" alt="Marvel Logo">
+        </div>
+    </div>
+
+    <div class="marq">
+        <marquee behavior="scroll" direction="left">Explore all the comics</marquee>
+    </div>
+
+  
+    <div class="background-section">
+        <div class="background-overlay"></div>
+
+        <div class="background-text">NEW THIS WEEK</div>
+
+        <div class="image-container">
+            <div class="card-container">
+               
+                <div class="card">
+                    <div class="front">
+                        <img src="./public/image/nickfury.png" alt="Nick Fury">
+                    </div>
+                    
+                    <div class="back"><a href="book-1.html " class="btn btn-light mt-2">More Details</a></div>
+                  
+               
+                </div>
+            </div>
+            <div class="card-container">
+                <div class="card">
+                    <div class="front">
+                        <img src="public/image/deadpool.png" alt="Deadpool">
+                    </div>
+                    <div class="back"><a href="book-2.html" class="btn btn-light mt-2">More Details</a></div>
+                </div>
+            </div>
+            <div class="card-container">
+                <div class="card">
+                    <div class="front">
+                        <img src="public/image/ironman.png" alt="Iron Man">
+                    </div>
+                    <div class="back"><a href="book-3.html " class="btn btn-light mt-2">More Details</a></div>
+                </div>
+            </div>
+            <div class="card-container">
+                <div class="card">
+                    <div class="front">
+                        <img src="/public/image/venom.png" alt="Venom">
+                    </div>
+                    <div class="back"><a href="book-4.html " class="btn btn-light mt-2">More Details</a></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="background-text2">TOP SELL</div>
+
+        <div class="image-container">
+            <div class="card-container">
+                <div class="card">
+                    <div class="front">
+                        <img src="public/image/powerless.png" alt="Powerless">
+                    </div>
+                    <div class="back"><a href="book-5.html " class="btn btn-light mt-2">More Details</a></div>
+                </div>
+            </div>
+            <div class="card-container">
+                <div class="card">
+                    <div class="front">
+                        <img src="public/image/santry.png" alt="Santry">
+                    </div>
+                    <div class="back"><a href="book-6.html " class="btn btn-light mt-2">More Details</a></div>
+                </div>
+            </div>
+            <div class="card-container">
+                <div class="card">
+                    <div class="front">
+                        <img src="public/image/moonknight.png" alt="Moon Knight">
+                    </div>
+                    <div class="back"><a href="book-7.html " class="btn btn-light mt-2">More Details</a></div>
+                </div>
+            </div>
+            <div class="card-container">
+                <div class="card">
+                    <div class="front">
+                        <img src="public/image/hellhunter.png" alt="Hell Hunter">
+                    </div>
+                    <div class="back"><a href="book-8.html " class="btn btn-light mt-2">More Details</a></div>
+                </div>
+            </div>
+        </div>
+       
+        
+    </div>
+
+</body>
+</html>
